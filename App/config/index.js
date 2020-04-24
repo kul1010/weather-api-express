@@ -5,5 +5,6 @@ module.exports = {
          PASSWORD : process.env.PASSWORD,
          DB  : process.env.DB
     },
+    clearDBURL: process.env.DATABASE_URL,
     apiURL : process.env.API_URL 
  }

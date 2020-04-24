@@ -7,6 +7,9 @@ const con = sql.createConnection({
     password:config.MySQL.PASSWORD,
     database:config.MySQL.DB
 })
+if(process.env.NODE_ENV==='production'){
+    con = config.clearDBURL;
+}
 
 con.connect(error=>{
     if(error) throw error;

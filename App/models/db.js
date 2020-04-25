@@ -2,7 +2,7 @@ const config = require("../config")
 const sql = require("mysql")
 let con;
 if(process.env.NODE_ENV==='production'){
-     con = config.clearDBURL;
+     con = sql.createConnection(config.clearDBURL);
 }else{
      con = sql.createConnection({
         host:config.MySQL.HOST,
@@ -12,7 +12,6 @@ if(process.env.NODE_ENV==='production'){
     })
 
 }
-console.log(con,'yyyy',process.env.NODE_ENV)
 
 con.connect(error=>{
     if(error) throw error;

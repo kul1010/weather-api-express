@@ -1,14 +1,16 @@
 const config = require("../config")
 const sql = require("mysql")
 
-const con = sql.createConnection({
-    host:config.MySQL.HOST,
-    user:config.MySQL.USER,
-    password:config.MySQL.PASSWORD,
-    database:config.MySQL.DB
-})
 if(process.env.NODE_ENV==='production'){
-    con = config.clearDBURL;
+    let con = config.clearDBURL;
+}else{
+    let con = sql.createConnection({
+        host:config.MySQL.HOST,
+        user:config.MySQL.USER,
+        password:config.MySQL.PASSWORD,
+        database:config.MySQL.DB
+    })
+
 }
 
 con.connect(error=>{

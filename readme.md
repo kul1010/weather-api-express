@@ -16,7 +16,12 @@ CREATE TABLE `weather_dtls` (
   `temp_min` INT(11) NOT NULL,
   `temp_max` INT(11) NOT NULL,
   `temp` INT(11) NOT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8;<br><br>
+) ENGINE=INNODB DEFAULT CHARSET=utf8;<br>-
+ALTER TABLE `weather_dtls`
+  ADD PRIMARY KEY (`id`); <br>
 
+ALTER TABLE `weather_dtls`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;<br>
 
 <a href="https://weather-api-express.herokuapp.com/list">Demo</a>

@@ -2,7 +2,8 @@
 <p>To host on heroku i have used cleardb for mysql with NodeJs application</P>
 1. git clone https://github.com/kul1010/weather-api-express.git <br>
 2. npm i <br>
-3. set envirnoment variable in .env file <br>
+3. set envirnoment variable on heroku using config_var in settings tab for your app <br> OR <br>
+set envirnoment variable in .env file <br>
 PORT=5000<br>
 HOST=127.0.0.1<br>
 USER=root<br>

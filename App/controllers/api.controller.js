@@ -3,7 +3,7 @@ const config = require("../config")
 const weather = require("../models/weather.model")
 exports.getAPIData = async (req,res)=>{
     const response =  await Axios.get(config.apiURL);
-    console.log(config.apiURL,'===',response,'ttt',response.data)
+    // console.log(config.apiURL,'===',response,'ttt',response.data)
     if(response.data){
         // console.log('fsd',response.data);
         weather.saveData(response.data,(err,data)=>{

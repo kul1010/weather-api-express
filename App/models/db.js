@@ -1,10 +1,10 @@
 const config = require("../config")
 const sql = require("mysql")
-
+let con;
 if(process.env.NODE_ENV==='production'){
-    let con = config.clearDBURL;
+     con = config.clearDBURL;
 }else{
-    let con = sql.createConnection({
+     con = sql.createConnection({
         host:config.MySQL.HOST,
         user:config.MySQL.USER,
         password:config.MySQL.PASSWORD,
@@ -12,6 +12,7 @@ if(process.env.NODE_ENV==='production'){
     })
 
 }
+console.log(con,'yyyy',process.env.NODE_ENV)
 
 con.connect(error=>{
     if(error) throw error;
